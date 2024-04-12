@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tax Calculator</h1>
+        <form id="taxForm">
+            <div class="form-group">
+                <label for="grossIncome">Enter Gross Annual Income <span class="question-mark">?</span></label>
+                <div class="input-with-icon">
+                    <input type="text" id="grossIncome" class="form-control" placeholder="Enter Gross Annual Income">
+                    <span class="error-icon" id="errorIconGI">!</span>
+                </div>
+                <div class="tooltip" id="tooltipGI">Please enter numbers only.</div>
+            </div>
+            <div class="form-group">
+                <label for="extraIncome">Enter Extra Income <span class="question-mark">?</span></label>
+                <div class="input-with-icon">
+                    <input type="text" id="extraIncome" class="form-control" placeholder="Enter Extra Income From Other Sources">
+                    <span class="error-icon" id="errorIconEI">!</span>
+                </div>
+                <div class="tooltip" id="tooltipEI">Please enter numbers only.</div>
+            </div>
+            <div class="form-group">
+                <label for="ageGroup">Enter Age Group <span class="question-mark">?</span></label>
+                <div class="input-with-icon">
+                    <select id="ageGroup" class="form-control">
+                        <option value="" disabled selected>Select Age Group</option>
+                        <option value="<40">&lt; 40</option>
+                        <option value=">=40&<60">&ge; 40 &amp; &lt; 60</option>
+                        <option value=">=60">&ge; 60</option>
+                    </select>
+                    <span class="error-icon" style="display: none;" id="errorIconAge">!</span>
+                </div>
+                <div class="tooltip" id="tooltipAge">Input field is mandatory</div>
+            </div>
+            <div class="form-group">
+                <label for="deductions">Enter Total Applicable Deductions <span class="question-mark">?</span></label>
+                <div class="input-with-icon">
+                    <input type="text" id="deductions" class="form-control" placeholder="Add Total Applicable Deductions">
+                    <span class="error-icon" id="errorIconDeductions">!</span>
+                </div>
+                <div class="tooltip" id="tooltipDeductions">Please enter numbers only.</div>
+            </div>
+            <!-- Add form groups for age group and deductions -->
+
+            <button type="button" id="calculateBtn">Submit</button>
+        </form>
+    </div>
+
+    <!-- Tooltip -->
+    <div id="tooltip" class="tooltip">
+        
+    </div>
+
+    <!-- Modal -->
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <div id="resultText">
+                <h1>Your Overall Income will be </h1>
+                <h2 class="resultoftax"></h2>
+                <h3>after tax deductions</h3>
+                <button id="closeModalBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./scripts.js"></script>
+
+
+</body>
+</html>
